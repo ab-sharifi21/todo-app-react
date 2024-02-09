@@ -1,53 +1,30 @@
-import { useState } from 'react';
-import { AddTask, TodoList } from './components'
-import { v4 as uuidv4 } from 'uuid';
-
-export interface TaskInterface {
-  id: string,
-  description: string,
-  priority: string,
-  done: boolean
-}
-
-const initialState: TaskInterface[] = [
-  {
-    id: uuidv4(),
-    description: 'Ir al gimnasio',
-    priority: 'high',
-    done: false
-  },
-  {
-    id: uuidv4(),
-    description: 'Limpiar la casa',
-    priority: 'low',
-    done: true
-  },
-  {
-    id: uuidv4(),
-    description: 'Ir a la compra',
-    priority: 'medium',
-    done: false
-  },
-]
+import { useTasks } from './hooks/useTasks';
+import { AddTask, TodoList } from './components';
+import { LuListTodo } from 'react-icons/lu';
 
 function App() {
-
-  const [tasks, setTasks] = useState(initialState);
+  const { tasks, setTasks, changeTaskDone, deleteTask } = useTasks();
 
   return (
-    <div className='flex flex-col gap-10'>
+    <div className="bg-[#403D3933] shadow-box-shadow flex flex-col gap-5 p-10 rounded-lg w-full">
+      <h1 className="text-3xl mb-3 text-white flex gap-3 items-center">
+        Todo App
+        <LuListTodo className="text-[#eb5e28]" />
+      </h1>
 
       <div>
         <AddTask tasks={tasks} setTasks={setTasks} />
       </div>
 
       <div>
-        <TodoList tasks={tasks} setTasks={setTasks} />
+        <TodoList
+          tasks={tasks}
+          changeTaskDone={changeTaskDone}
+          deleteTask={deleteTask}
+        />
       </div>
-
-    
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
