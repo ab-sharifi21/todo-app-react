@@ -15,5 +15,8 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'no-unused-vars': 'warn',
+    'vitest/expect-expect': 'off',
+    'react/prop-types': 'off',
   },
 };

@@ -29,6 +29,7 @@ export function TodoItem({ task, changeTaskDone, deleteTask }: Props) {
     <li className="flex items-center gap-2 justify-between w-full">
       <div className="flex items-center gap-2">
         <input
+          data-testid="todo-checkbox"
           type="checkbox"
           className="w-4 h-4 rounded-xl checked:bg-blue-400 checked:border-transparent"
           checked={done}
@@ -46,6 +47,7 @@ export function TodoItem({ task, changeTaskDone, deleteTask }: Props) {
         <CiEdit className="text-white text-xl cursor-pointer hover:scale-125" />
 
         <IoTrashOutline
+          data-testid="delete-icon"
           className="text-[#f14444] hover:scale-125 cursor-pointer"
           onClick={() => deleteTask(id)}
         />
