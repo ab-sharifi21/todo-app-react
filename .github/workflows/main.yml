@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+
+jobs:
+  check:
+    name: ✅ check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ⬇️ Checkout project
+        uses: actions/checkout@v4
+
+      - name: 🛠️ Install dependencies
+        run: npm install
+
+      - name: 🦋 Check format
+        run: npm run check:format
+
+      - name: 📑 Check lint
+        run: npm run check:lint
+
+
+  test:
+    name: 🧾 Test app
+    runs-on: ubuntu-latest
+    needs: check
+
+    steps:
+      - name: ⬇️ Checkout project
+        uses: actions/checkout@v4
+         
+      - name: Install dependencies
+        run: npm install
+
+      - name: 🧪 Run tests
+        run: npm run test
+
+  build:
+    name: 👷 Build app
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - name: ⬇️ Checkout project
+        uses: actions/checkout@v4
+
+      - name: ⚒️ Build project
+        run: npm run build
