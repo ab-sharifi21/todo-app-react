@@ -9,7 +9,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest",
-    "check:format": "prettier --check .",
+    "check:format": "prettier --check --write .",
     "format": "prettier --write ."
   },
   "dependencies": {
