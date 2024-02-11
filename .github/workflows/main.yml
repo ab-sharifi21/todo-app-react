@@ -23,7 +23,7 @@ jobs:
         run: npm run check:format
 
       - name: 📑 Check lint
-        run: npm run check:lint
+        run: npm run lint
 
 
   test:
