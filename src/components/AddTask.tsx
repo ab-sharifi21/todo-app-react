@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
 import { TaskInterface } from '../hooks/useTasks';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -13,7 +13,7 @@ export function AddTask({ tasks, setTasks }: Props) {
     priority: '',
   });
 
-  const handleFormChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleFormChange = (event) => {
     const { name, value } = event.target;
     setFormData({
       ...formData,
@@ -21,7 +21,7 @@ export function AddTask({ tasks, setTasks }: Props) {
     });
   };
 
-  const handleSubmit = (event: SubmitEvent) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
 
     if (formData.text.length < 2) {

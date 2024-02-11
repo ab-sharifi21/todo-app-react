@@ -1,6 +1,7 @@
+import { useEffect, useState } from 'react';
 import { IoTrashOutline } from 'react-icons/io5';
 import { TaskInterface } from '../hooks/useTasks';
-import { useEffect, useState } from 'react';
+import { CiEdit } from 'react-icons/ci';
 
 interface Props {
   task: TaskInterface;
@@ -35,16 +36,20 @@ export function TodoItem({ task, changeTaskDone, deleteTask }: Props) {
         />
 
         <p
-          className={`${done ? 'line-through' : 'none'} ${color} m-2 px-3 rounded-2xl text-white`}
+          className={`${done ? 'line-through' : 'none'} ${color} m-2 px-3 rounded-2xl`}
         >
           {description}
         </p>
       </div>
 
-      <IoTrashOutline
-        className="text-[#f14444]"
-        onClick={() => deleteTask(id)}
-      />
+      <div className="flex gap-3 items-center">
+        <CiEdit className="text-white text-xl cursor-pointer hover:scale-125" />
+
+        <IoTrashOutline
+          className="text-[#f14444] hover:scale-125 cursor-pointer"
+          onClick={() => deleteTask(id)}
+        />
+      </div>
     </li>
   );
 }
