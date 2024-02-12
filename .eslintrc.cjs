@@ -17,5 +17,6 @@ module.exports = {
     ],
     'vitest/expect-expect': 'off',
     'react/prop-types': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
   },
 };

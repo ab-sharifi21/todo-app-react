@@ -13,7 +13,7 @@ export function AddTask({ tasks, setTasks }: Props) {
     priority: '',
   });
 
-  const handleFormChange = (event) => {
+  const handleFormChange = (event: any) => {
     const { name, value } = event.target;
     setFormData({
       ...formData,
@@ -21,7 +21,7 @@ export function AddTask({ tasks, setTasks }: Props) {
     });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: any) => {
     event.preventDefault();
 
     if (formData.text.length < 2) {
