@@ -1,9 +1,14 @@
 import { useTasks } from './hooks/useTasks';
 import { AddTask, TodoList } from './components';
 import { LuListTodo } from 'react-icons/lu';
+import { useEffect } from 'react';
 
 function App() {
   const { tasks, setTasks, changeTaskDone, deleteTask } = useTasks();
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
 
   return (
     <div className="bg-[#403D3933] shadow-box-shadow flex flex-col gap-5 p-10 rounded-lg w-full">

@@ -30,7 +30,10 @@ const initialState: TaskInterface[] = [
 ];
 
 export const useTasks = () => {
-  const [tasks, setTasks] = useState<TaskInterface[]>(initialState);
+  const [tasks, setTasks] = useState<TaskInterface[]>(() => {
+    const localStorageTasks = localStorage.getItem('tasks');
+    return localStorageTasks ? JSON.parse(localStorageTasks) : initialState;
+  });
 
   const changeTaskDone = (id: string) => {
     const taskTochange = tasks.find((task) => {
