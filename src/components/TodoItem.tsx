@@ -26,24 +26,24 @@ export function TodoItem({ task, changeTaskDone, deleteTask }: Props) {
   });
 
   return (
-    <li className="flex items-center gap-2 justify-between w-full">
-      <div className="flex items-center gap-2">
+    <li className="justify-between inline-flex w-full items-center space-x-2 rounded-sm border-slate-700 px-2 py-1 transition duration-150 ease-linear border-b hover:bg-white/5">
+      <div className="flex items-center">
         <input
           data-testid="todo-checkbox"
           type="checkbox"
-          className="w-4 h-4 rounded-xl checked:bg-blue-400 checked:border-transparent"
+          className="w-4 h-4"
           checked={done}
           onChange={() => changeTaskDone(id)}
         />
 
         <p
-          className={`${done ? 'line-through' : 'none'} ${color} m-2 px-3 rounded-2xl`}
+          className={`${done ? 'line-through' : 'none'} ${color} px-2 rounded-2xl`}
         >
           {description}
         </p>
       </div>
 
-      <div className="flex gap-3 items-center">
+      <div className="flex gap-2 items-center">
         <CiEdit className="text-white text-xl cursor-pointer hover:scale-125" />
 
         <IoTrashOutline

@@ -9,7 +9,7 @@ interface Props {
 
 export function TodoList({ tasks, changeTaskDone, deleteTask }: Props) {
   return (
-    <ul className="text-slate-800 font-sans text-lg w-full">
+    <ul className="font-sans bg-[#403D3933] shadow-box-shadow py-4 px-6 space-y-1 rounded-md">
       {tasks.map((task: TaskInterface) => {
         return (
           <TodoItem

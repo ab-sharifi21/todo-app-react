@@ -44,11 +44,11 @@ export function AddTask({ tasks, setTasks }: Props) {
   };
 
   return (
-    <form className="flex flex-col gap-3 w-full" onSubmit={handleSubmit}>
+    <form className="flex flex-col gap-3 items-center justify-center" onSubmit={handleSubmit}>
       <select
         value={formData.priority}
         name="priority"
-        className="bg-[#eb5e28] py-2 px-3 outline-none rounded-2xl text-slate-50 w-80"
+        className="bg-[#eb5e28] py-2 px-3 outline-none rounded-2xl text-slate-50 w-full"
         onChange={handleFormChange}
       >
         <option value="" disabled>

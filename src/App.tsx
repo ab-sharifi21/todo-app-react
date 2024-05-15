@@ -1,6 +1,5 @@
 import { useTasks } from './hooks/useTasks';
 import { AddTask, TodoList } from './components';
-import { LuListTodo } from 'react-icons/lu';
 import { useEffect } from 'react';
 
 function App() {
@@ -11,23 +10,31 @@ function App() {
   }, [tasks]);
 
   return (
-    <div className="bg-[#403D3933] shadow-box-shadow flex flex-col gap-5 p-10 rounded-lg w-full">
-      <h1 className="text-3xl mb-3 text-white flex gap-3 items-center">
-        Todo App
-        <LuListTodo className="text-[#eb5e28]" />
-      </h1>
-
-      <div>
-        <AddTask tasks={tasks} setTasks={setTasks} />
+    <div className='flex flex-col items-center'>
+      <div className="my-4 bg-[#403D3933] shadow-box-shadow p-6 rounded-lg w-[350px]">
+          <AddTask tasks={tasks} setTasks={setTasks} />
       </div>
 
-      <div>
-        <TodoList
-          tasks={tasks}
-          changeTaskDone={changeTaskDone}
-          deleteTask={deleteTask}
-        />
-      </div>
+        <div className='flex gap-8 text-white'>
+          <div>
+            <h3 className='text-sm font-semibold my-2'>Tasks to do - 2</h3>
+            <TodoList
+              tasks={tasks}
+              changeTaskDone={changeTaskDone}
+              deleteTask={deleteTask}
+            />
+          </div>
+
+          <div>
+          <h3 className='text-sm font-semibold my-2'>Done - 2</h3>
+            <TodoList
+              tasks={tasks}
+              changeTaskDone={changeTaskDone}
+              deleteTask={deleteTask}
+            />
+          </div>
+        </div>
+
     </div>
   );
 }
