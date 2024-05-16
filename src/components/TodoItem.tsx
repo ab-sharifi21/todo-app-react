@@ -48,7 +48,7 @@ export function TodoItem({ task, changeTaskDone, deleteTask }: Props) {
 
         <IoTrashOutline
           data-testid="delete-icon"
-          className="text-[#f14444] hover:scale-125 cursor-pointer"
+          className="text-orange-600 hover:scale-125 cursor-pointer"
           onClick={() => deleteTask(id)}
         />
       </div>
