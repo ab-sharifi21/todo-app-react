@@ -15,9 +15,9 @@ export function TodoItem({ task, changeTaskDone, deleteTask }: Props) {
   const [color, setColor] = useState('');
 
   const changeColor = (): void => {
-    priority === 'low' && setColor('text-blue-500');
+    priority === 'low' && setColor('text-slate-500');
     priority === 'high' && setColor('text-orange-500');
-    priority === 'medium' && setColor('text-green-500');
+    priority === 'normal' && setColor('text-blue-500');
     done && setColor('text-white/20');
   };
 

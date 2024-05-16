@@ -56,7 +56,7 @@ export function AddTask({ tasks, setTasks }: Props) {
           Priority
         </option>
         <option value="low">Low</option>
-        <option value="medium">Medium</option>
+        <option value="normal">Normal</option>
         <option value="high">High</option>
       </select>
 
