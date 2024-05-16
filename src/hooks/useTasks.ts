@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 
 export interface TaskInterface {
   id: string;
@@ -8,26 +7,7 @@ export interface TaskInterface {
   done: boolean;
 }
 
-const initialState: TaskInterface[] = [
-  {
-    id: uuidv4(),
-    description: 'Ir al gimnasio',
-    priority: 'high',
-    done: false,
-  },
-  {
-    id: uuidv4(),
-    description: 'Limpiar la casa',
-    priority: 'low',
-    done: true,
-  },
-  {
-    id: uuidv4(),
-    description: 'Ir a la compra',
-    priority: 'medium',
-    done: false,
-  },
-];
+const initialState: TaskInterface[] = [];
 
 export const useTasks = () => {
   const [tasks, setTasks] = useState<TaskInterface[]>(() => {
