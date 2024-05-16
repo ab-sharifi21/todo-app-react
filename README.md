@@ -2,6 +2,8 @@
 
 This is a straightforward Todo App built with React and TypeScript. It allows to add, remove and mark and unmark tasks as completed.
 
+<img src="./public/todo-app.png" />
+
 # Installation
 
 - To clone the project 👉 `git clone https://github.com/plexus-tech/dt_react_todo-spa`
