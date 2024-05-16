@@ -1,6 +1,7 @@
 import { useTasks } from './hooks/useTasks';
 import { AddTask, TodoList } from './components';
 import { useEffect } from 'react';
+import { CiBoxList } from 'react-icons/ci';
 
 function App() {
   const { tasks, setTasks, changeTaskDone, deleteTask } = useTasks();
@@ -23,12 +24,16 @@ function App() {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="my-4 bg-[#403D3933] shadow-box-shadow p-6 rounded-lg w-[350px]">
+      <div className="flex justify-between items-center gap-12 mt-10 mb-6 w-[80%]">
+        <div className='flex items-center justify-center gap-2'>
+          <h1 className='text-xl text-white font-bold'>To Do App</h1>
+          <CiBoxList className='w-6 h-6 text-[#F5C61C]' />
+        </div>
         <AddTask tasks={tasks} setTasks={setTasks} />
       </div>
 
-      <div className="flex gap-8 text-white w-[90%]">
-        <div className="w-1/2">
+      <div className="flex gap-8 text-white w-[80%]">
+        <div className="w-2/3">
           <h3 className="text-sm font-semibold my-2">
             Tasks to do - {toDoTasks.length}
           </h3>
@@ -39,7 +44,7 @@ function App() {
           />
         </div>
 
-        <div className="w-1/2">
+        <div className="w-1/3">
           <h3 className="text-sm font-semibold my-2">
             Done - {doneTasks.length}
           </h3>

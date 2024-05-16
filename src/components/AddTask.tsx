@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { TaskInterface } from '../hooks/useTasks';
 import { v4 as uuidv4 } from 'uuid';
+import { FaPlus } from 'react-icons/fa';
 
 interface Props {
   tasks: TaskInterface[];
@@ -44,11 +45,11 @@ export function AddTask({ tasks, setTasks }: Props) {
   };
 
   return (
-    <form className="flex flex-col gap-3 items-center justify-center" onSubmit={handleSubmit}>
+    <form className="flex gap-5" onSubmit={handleSubmit}>
       <select
         value={formData.priority}
         name="priority"
-        className="bg-[#eb5e28] py-2 px-3 outline-none rounded-2xl text-slate-50 w-full"
+        className="bg-[#F5C61C] px-4 outline-none rounded-md text-black text-sm font-semibold"
         onChange={handleFormChange}
       >
         <option value="" disabled>
@@ -59,9 +60,9 @@ export function AddTask({ tasks, setTasks }: Props) {
         <option value="high">High</option>
       </select>
 
-      <div className="w-full relative flex flex-col">
+      <div className="flex gap-2">
         <input
-          className="py-2 px-3 outline-none rounded-2xl caret-orange-500"
+          className="py-2 px-4 outline-none rounded-md placeholder:text-sm text-sm font-semibold"
           type="text"
           placeholder="New Task"
           name="text"
@@ -70,10 +71,10 @@ export function AddTask({ tasks, setTasks }: Props) {
         />
 
         <button
-          className="bg-[#eb5e28] text-white px-2 h-10 w-20 rounded-2xl absolute right-0"
+          className="text-white hover:scale-x-125 duration-300 hover:text-[#F5C61C]"
           type="submit"
         >
-          Add
+          <FaPlus className='h-6 w-6' />
         </button>
       </div>
     </form>
